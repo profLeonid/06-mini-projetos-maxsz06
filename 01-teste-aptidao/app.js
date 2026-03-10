@@ -1,0 +1,25 @@
+'use strict'
+
+function removerClasses(){
+    const resultado = document.getElementById('resultado')
+    resultado.classList.remove('apto', 'nao-apto')
+}
+
+function avaliar(){
+
+    const tempo = document.getElementById('tempo')
+    const resultado = document.getElementById('resultado')
+    
+    if(tempo.value > 14){
+        resultado.textContent='apto'
+        removerClasses()
+        resultado.classList.add('Apto')
+    }else{
+        resultado.textContent='Não Apto'
+        removerClasses()
+        resultado.classList.add('nao-apto')
+
+    }
+
+
+}
