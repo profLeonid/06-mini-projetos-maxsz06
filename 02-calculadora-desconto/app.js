@@ -2,13 +2,13 @@
 
 function removerClasses() {
     const resultado = document.getElementById('resultado')
-    resultado.classList.remove('cincoporcento', 'dezporcento','acimadedez')
+    resultado.classList.remove('cincoporcento', 'dezporcento', 'acimadedez')
 }
 
-function calcularDesconto(){
-   
+function calcularDesconto() {
+
     const Defpreco = document.getElementById('preco') // Pegar o objeto
-    const Defdesconto =  document.getElementById('desconto') // Pegar o objeto
+    const Defdesconto = document.getElementById('desconto') // Pegar o objeto
     const ValPreco = Defpreco.value
     const ValDesconto = Defdesconto.value
 
@@ -23,21 +23,27 @@ function calcularDesconto(){
         let resultado = calcularDesconto(preco, desconto);
     }
 
-function calcularDesconto (preco,desconto){
 
-    removerClasses()
-    const porcentagem = desconto/100
-    const valorComDesconto = preco - (preco*porcentagem)
 
-    
-    if(desconto <=5 ){
-        resultado.classList.add('cincoporcento')
-    }else if(desconto >=10){
-        resultado.classList.add('dezporcento')
-    }else if (desconto>10){
-        resultado.classList.add('acimadedez')
+    function calcularDesconto(preco, desconto) {
+
+        removerClasses()
+        const porcentagem = desconto / 100
+
+        const totalDesconto = (preco * desconto) / 100
+        const valorEconomizado = preco - totalDesconto
+
+
+        if (desconto <= 5) {
+            resultado.classList.add('cincoporcento')
+            resultado.textContent = 'Você ira pagar:' + valorEconomizado + ' Economizando ' + totalDesconto
+        } else if (desconto <= 10) {
+            resultado.classList.add('dezporcento')
+            resultado.textContent = 'Você ira pagar:' + valorEconomizado + ' Economizando ' + totalDesconto
+        } else if (desconto > 10) {
+            resultado.classList.add('acimadedez')
+            resultado.textContent = 'Você ira pagar:' + valorEconomizado + ' Economizando ' + totalDesconto
+        }
+
     }
-
-}
-
 }
