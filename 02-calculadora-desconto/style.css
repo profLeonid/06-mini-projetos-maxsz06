@@ -111,14 +111,18 @@ button:hover {
 
 .resultado.cincoporcento{
   border: 1px solid #14532d;
+  box-shadow: 0 0 16px #14532d;
 }
 
 .resultado.dezporcento{
   border: 1px solid #713f12;
+  box-shadow: 0 0 16px #713f12;
+
 }
 
 .resultado.acimadedez{
   border: 1px solid #7f1d1d;
+  box-shadow: 0 0 16px #7f1d1d;
 }
 
 footer {
