@@ -2,6 +2,9 @@
 
 const removerClasses =  function(){
 
+    const resultado = document.getElementById('resultado')
+    resultado.classList.remove('aprovado', 'recuperacao', 'reprovado')
+
 }
  
 const calcularMedia =function(){
@@ -20,17 +23,22 @@ const calcularMedia =function(){
               nota3 <0 || nota3 >10
     ){  alert('Erro: Apenas numeros entre 0 e 10')
 
+    }else{
+
+        let mediaAluno = (nota1 + nota2 + nota3)/3
+
+        removerClasses()
+        if (mediaAluno > 7) {
+            resultado.classList.add('aprovado')
+            resultado.textContent = 'APROVADO'
+          }
+          else if (mediaAluno >= 5) {
+            resultado.classList.add('recuperacao')
+            resultado.textContent = 'RECUPERAÇÃO'
+          }
+          else {
+            resultado.classList.add('reprovado')
+            resultado.textContent = 'REPROVADO'
+          }
     }
-
-    let mediaAluno = (nota1 + nota2 + nota3)/3
-   
-
-    if (mediaAluno>7){
-        //Aprovado
-    }else if (mediaAluno >=5){
-        //Recuperacao
-    }else if ( mediaAluno< 4.9){
-        //Reprovado
-    }
-
 }

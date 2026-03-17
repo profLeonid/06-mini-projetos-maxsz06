@@ -106,21 +106,21 @@ button:hover {
   padding: 1.5rem;
   text-align: center;
   color: #d1d5db;
-  border: 1px solid #374151;
+  border: 1px solid transparent;
   align-items: center;
   justify-content: center;
 }
 
-.resultado.aprovado{
+.resultado.aprovado {
   border: 1px solid #14532d;
 }
 
-.resultado.recuperacao{
-border: 1px solid #713f12
+.resultado.recuperacao {
+  border: 1px solid #713f12;
 }
 
-.resultado.reprovado{
-border: 1px solid #7f1d1d
+.resultado.reprovado {
+  border: 1px solid #7f1d1d;
 }
 
 footer {
